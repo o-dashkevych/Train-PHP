@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>First PHP</title>
+    <title>Залогиньтесь</title>
 </head>
 <meta charset="utf-8">
 <body>
