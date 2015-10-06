@@ -2,6 +2,7 @@
 <head>
     <title>First PHP</title>
 </head>
+<meta charset="utf-8">
 <body>
 <form method="post" action="room.php">
     <input type="text" name="login">

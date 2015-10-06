@@ -8,7 +8,7 @@
 <?php
 $login = $_POST["login"];
 $var = print_r($login, true);
-echo "Привет " . $login . "!";
+echo "Здравствуй " . $login . "!";
 ?>
 <br>
 <br>
