@@ -37,7 +37,6 @@ function myCalendar($month, $year)
         echo "</tr>";
     }
     echo "</table><br><br>";
-
 }
 ?>
 <form method="get">
