@@ -8,7 +8,7 @@ $password = $_POST["password"];
 
 $sql = "SELECT Email FROM User WHERE Email = '$email'";
 $result = $mysqli->query($sql);
-var_dump($result);
+//var_dump($result);
 
 if ($result->num_rows > 0) {
     $errors = "Such user is already registered";

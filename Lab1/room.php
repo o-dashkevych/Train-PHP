@@ -6,6 +6,11 @@
 </head>
 <body>
 <?php
+session_start();
+$userID = $_SESSION["userID"];
+if($userID == 0){
+    header("Location: /First_PHP/Lab1/authetification.php"); //redirect
+}
 $login = $_GET["login"];
 $var = print_r($login, true);
 echo "Привет " . $login . "!";

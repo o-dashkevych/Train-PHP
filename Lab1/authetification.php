@@ -1,22 +1,25 @@
 <?php
+session_start();
 //error_reporting(E_ALL);
 include ("db_connect.php");
+if(!empty($_POST["email"])) {
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+    $login = $_POST["login"];
 
-$email = $_POST["email"];
-$password = $_POST["password"];
-$login = $_POST["login"];
+    $sql = "SELECT Login, idUser FROM User WHERE Email = '$email' AND Password = '$password'";
+    $result = $mysqli->query($sql);
+//var_dump($result);
 
-$sql = "SELECT Login FROM User WHERE Email = '$email' AND Password = '$password'";
-$result = $mysqli->query($sql);
-var_dump($result);
-
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    $login = $row["Login"];
-    header("Location: /First_PHP/Lab1/room.php?login=$login"); //redirect
-    return;
-} else {
-    $errors = "Invalid password";
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $login = $row["Login"];
+        $_SESSION["userID"] = $row["idUser"];
+        header("Location: /First_PHP/Lab1/room.php?login=$login"); //redirect
+        return;
+    } else {
+        $errors = "Invalid password";
+    }
 }
 ?>
 <html>
