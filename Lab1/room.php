@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-$login = $_POST["login"];
+$login = $_GET["login"];
 $var = print_r($login, true);
 echo "Привет " . $login . "!";
 ?>
